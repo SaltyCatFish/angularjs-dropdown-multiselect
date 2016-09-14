@@ -148,6 +148,7 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 
                 if ($scope.settings.closeOnBlur) {
                     $document.on('click', function (e) {
+                        _.contains = typeof _.contains === 'undefined'  ? _.includes : _.contains;
                         var target = e.target.parentElement;
                         var parentFound = false;
 
